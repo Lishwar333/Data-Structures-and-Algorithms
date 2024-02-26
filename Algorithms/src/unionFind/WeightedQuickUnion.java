@@ -20,14 +20,15 @@ public class WeightedQuickUnion {
         int rootP = findRoot(p);
         int rootQ = findRoot(q);
 
-        if (rootP != rootQ) {
-            if (size[rootP] < size[rootQ]) {
-                parent[rootP] = rootQ;
-                size[rootQ] += size[rootP];
-            } else {
-                parent[rootQ] = rootP;
-                size[rootP] += size[rootQ];
-            }
+        if(rootP != rootQ) {
+        	if(size[p] < size[q] ) {
+        		parent[p] = rootQ;
+        		size[q] = +size[p];
+        	}
+        	else {
+        		parent[q] = rootP;
+        		size[p] = +size[q];
+        	}
         }
     }
 
@@ -53,11 +54,11 @@ public class WeightedQuickUnion {
         weightedQuickUnion.union(0, 4);
 
         // Perform find operations.
-        int rootOf3 = weightedQuickUnion.findRoot(3);
+        int rootOf0 = weightedQuickUnion.findRoot(0);
         int rootOf7 = weightedQuickUnion.findRoot(7);
 
         // The tree remains balanced, and both union and find operations have O(log N) time complexity.
         
-        System.out.print(rootOf3+""+rootOf7);
+        System.out.print(" Root of 0 is "+rootOf0+" and Root of 7 is "+rootOf7);
     }
 }
