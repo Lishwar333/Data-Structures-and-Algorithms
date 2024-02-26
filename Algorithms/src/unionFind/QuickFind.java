@@ -48,6 +48,7 @@ public class QuickFind {
         uf.union(2, 3);
         uf.union(4, 5);
         uf.union(6, 7);
+        uf.union(1, 5);
 
         System.out.println("Is 0 connected to 7? " + uf.isConnected(0, 7)); // Should be false
         System.out.println("Is 4 connected to 5? " + uf.isConnected(4, 5)); // Should be true
