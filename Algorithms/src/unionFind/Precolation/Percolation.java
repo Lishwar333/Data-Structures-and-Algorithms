@@ -70,13 +70,7 @@ public class Percolation {
         return qu.connected(VIRTUAL_BOTTOM_KEY, VIRTUAL_TOP_KEY);
     }
 
-    /**
-     * connects to adjacent cell given coordinates and offset
-     * @param i
-     * @param j
-     * @param rowOffset
-     * @param columnOffset
-     */
+    
     private void union(int i, int j, int rowOffset, int columnOffset) {
         final int currentKey = xytoD(i, j);
         final int column2 = j + columnOffset;
@@ -87,14 +81,7 @@ public class Percolation {
         }
     }
 
-    /**
-     * Connect to virtual top and bottom in qu.
-     * qu2 has not virtual bottom to avoid backwash
-     * @param i
-     * @param j
-     * @param virtualKey
-     * @param bottom
-     */
+    
     private void unionVirtual(int i, int j, int virtualKey, boolean bottom) {
         final int currentKey = xytoD(i, j);
         qu.union(currentKey, virtualKey);
@@ -103,13 +90,7 @@ public class Percolation {
         }
     }
 
-    /**
-     * Valid index are only between 1 and N
-     *
-     * @param x
-     * @param y
-     * @return
-     */
+    
     private boolean isValid(int x, int y) {
         return x >= 1 && x <= N && y >= 1 && y <= N;
     }
@@ -135,10 +116,6 @@ public class Percolation {
 
     private boolean isLeftEdge(int j) {
         return j == 1;
-    }
-
-    public static void main(String[] args) {
-        test2();
     }
 
     private static void test2() {
@@ -195,5 +172,10 @@ public class Percolation {
         p.open(1, 3);
         System.out.println("p.isOpen(1,3) = " + p.isOpen(1, 3));
         System.out.println("p.isFull(1, 3) = " + p.isFull(1, 3));
+    }
+    
+    //Main function
+    public static void main(String[] args) {
+        test2();
     }
 }
