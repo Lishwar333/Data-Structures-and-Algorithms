@@ -30,29 +30,35 @@ public class MaxElementInARoot {
     public boolean connected(int p, int q) {
         validateIndex(p);
         validateIndex(q);
-        return findRoot(p) == findRoot(q);
+        return findRoot(p)==findRoot(q);
     }
 
     public void union(int p, int q) {
         validateIndex(p);
         validateIndex(q);
+        
+       int rootP = findRoot(p);
+       int rootQ = findRoot(q);
+       
+       if(rootP == rootQ) {
+    	   return;
+       }
+       
+       if(size[rootP] > size[rootQ]) {
+    	   
+    	   parent[rootQ] = rootP;
+    	   size[rootP] = +size[rootQ];
+    	   max[rootP] = Math.max(max[rootP], max[rootQ]);
+       }
+      // if(size[rootP] < size[rootQ]) { // can't use this as it checks this condition, immediately making a change previous condition 
+       else {
+    	   parent[rootP] = rootQ;
+    	   size[rootQ] = +size[rootP];
+    	   max[rootQ] = Math.max(max[rootP], max[rootQ]);
+       }
+       
 
-        int rootP = findRoot(p);
-        int rootQ = findRoot(q);
-
-        if (rootP == rootQ) {
-            return;
-        }
-
-        if (size[rootP] < size[rootQ]) {
-            parent[rootP] = rootQ;
-            size[rootQ] += size[rootP];
-            max[rootQ] = Math.max(max[rootP], max[rootQ]);
-        } else {
-            parent[rootQ] = rootP;
-            size[rootP] += size[rootQ];
-            max[rootP] = Math.max(max[rootP], max[rootQ]);
-        }
+       
     }
 
     private int findRoot(int i) {

@@ -2,11 +2,18 @@ package unionFind;
 
 //I think it is correct
 
+//Successor with delete. Given a set of N integers S={0,1,…,N−1} and a 
+//sequence of requests of the following form:
+
+//Remove x from S Find the successor of x: the smallest y in S such that 
+//y≥x. design a data type so that all operations (except construction) 
+//should take logarithmic time or better.
+
 public class SuccessorWithDelete {
 
     private int id[];
     private int sz[];
-    private int actualList[];
+    private int actualList[]; //Actually id[] itself is enough for this problem
     private int N;
 
     public SuccessorWithDelete(int N){
@@ -15,7 +22,7 @@ public class SuccessorWithDelete {
         sz = new int[N];
         actualList = new int[N];
         for(int i=0; i<N; i++){
-            id[i] = i;
+            id[i] = i; //parent
             sz[i] = 1;
             actualList[i] = i;
         }
@@ -35,17 +42,13 @@ public class SuccessorWithDelete {
 
         int pRoot = root(p);
         int qRoot = root(q);
-        if (sz[pRoot] < sz[qRoot]) {
+        
+        // No need of if else and all as rootP has to only be merged with rootQ
             id[pRoot] =  qRoot;
             sz[qRoot] = sz[qRoot] + sz[pRoot];
+            actualList[pRoot] = actualList[qRoot];  // this is the crucial step
 
-        } else {
-            id[qRoot] = pRoot;
-            sz[pRoot] = sz[pRoot] + sz[qRoot];
-            actualList[pRoot] = actualList[qRoot];              // this is the crucial step
-        }
     }
-
 
     public void remove(int x){
         union(x, x+1);
@@ -54,6 +57,7 @@ public class SuccessorWithDelete {
 
     public int successor(int x){
         return actualList[(root(x+1))]; //return actualList[root(x + 1)];
+        //Actually id itslef id enough. id[(root(x+1))] will do the same!
     }
     
     public static void main(String[] args) {
