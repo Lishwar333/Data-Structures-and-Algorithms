@@ -1,4 +1,4 @@
-package unionFind.Precolation;
+package Algorithms_week_1.unionFind.Precolation;
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 

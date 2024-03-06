@@ -1,4 +1,4 @@
-package unionFind;
+package Algorithms_week_1.unionFind;
 import java.util.Arrays;
 
 //Social network connectivity. Given a social network containing n 

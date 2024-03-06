@@ -1,4 +1,4 @@
-package complexities;
+package Algorithms_week_1.complexities;
 
 //GeekforGeeks answer
 //https://www.youtube.com/watch?v=KVfxgpI3Tv0

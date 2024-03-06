@@ -1,4 +1,4 @@
-package unionFind;
+package Algorithms_week_1.unionFind;
 public class QuickFind {
     private int[] id;
 

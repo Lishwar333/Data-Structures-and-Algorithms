@@ -1,4 +1,4 @@
-package complexities;
+package Algorithms_week_1.complexities;
 
 /**
  * Coursera - Algorithms Part I
