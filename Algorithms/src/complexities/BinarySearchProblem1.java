@@ -1,4 +1,4 @@
-package Complexities;
+package complexities;
 
 public class BinarySearchProblem1 {
 //	// Little confusing

@@ -1,4 +1,4 @@
-package Complexities;
+package complexities;
 
 /**
  * Coursera - Algorithms Part I

@@ -1,4 +1,4 @@
-package Complexities;
+package complexities;
 
 //GeekforGeeks answer
 //https://www.youtube.com/watch?v=KVfxgpI3Tv0
