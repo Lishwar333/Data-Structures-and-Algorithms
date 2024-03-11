@@ -20,7 +20,7 @@ public class ResizingArrayQueue {
         String item = s[f];
         s[f] = null;
         f = (f + 1) % s.length; // Use (f + 1) to calculate the correct index
-        N--;
+        N--; // (f + N) in enqueue will compensate for this
 
         if (N > 0 && N == s.length / 4) {
             resize(s.length / 2);
