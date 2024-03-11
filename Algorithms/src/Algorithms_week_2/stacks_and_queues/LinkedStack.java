@@ -15,6 +15,7 @@ public class LinkedStack {
 		return first == null;
 	}
 	
+	//Using first here similar to last in queue
 	public void push(String item) {
 		
 		Node oldFirst = first;
