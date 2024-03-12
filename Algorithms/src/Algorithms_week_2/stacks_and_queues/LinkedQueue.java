@@ -7,7 +7,7 @@ public class LinkedQueue<Item> implements Iterable<Item> {
 	Node first, last = null;
 	
 	public Iterator<Item> iterator() {
-		
+		 
 		return new IteratorLinkedQueue();
 	}
 	

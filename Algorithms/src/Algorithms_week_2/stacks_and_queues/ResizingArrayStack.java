@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class ResizingArrayStack<Item> implements Iterable<Item> {
 		
-	Item[] s = (Item[])new Object[1];
+	Item[] s = (Item[])new Object[1]; 
 	int N = 0;
 	
 	public Iterator<Item> iterator() {

@@ -1,7 +1,7 @@
 package Algorithms_week_2.stacks_and_queues;
 
 import java.util.Iterator;
-
+ 
 public class LinkedStack<Item> implements Iterable<Item>{
 	
 	Node first = null;

@@ -6,7 +6,7 @@ import java.util.Iterator;
 // https://algs4.cs.princeton.edu/13stacks/ResizingArrayQueue.java.html // refer this
 public class ResizingArrayQueue<Item> implements Iterable<Item> {
 	
-	Item[] s = (Item[])new Object[1];
+	Item[] s = (Item[])new Object[1]; 
     int N = 0;
     int f = 0;
     
