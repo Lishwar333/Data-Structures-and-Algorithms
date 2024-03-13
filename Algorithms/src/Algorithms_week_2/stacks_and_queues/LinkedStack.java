@@ -6,6 +6,13 @@ public class LinkedStack<Item> implements Iterable<Item>{
 	
 	Node first = null;
 	
+	int sz = 0;
+	
+	public int size() {
+		
+		return sz;
+	}
+	
 public Iterator<Item> iterator() {
 		
 		return new IteratorLinkedStack();
@@ -50,12 +57,14 @@ public Iterator<Item> iterator() {
 		first = new Node();
 		first.item= item;
 		first.next = oldFirst;
+		sz++;
 	}
 	
 	public Item pop() {
 		
 		Item item = first.item;
 		first = first.next;
+		sz--;
 		return item;
 	}
 	
@@ -73,16 +82,21 @@ public Iterator<Item> iterator() {
 		stack.push("r");
 		stack.push("k");
 		
+		System.out.println(stack.size());
+		
 		i = stack.iterator();
 		
 		while(i.hasNext()){
 			
 			String item = i.next();
-			System.out.print(item);			
+			System.out.print(item);	
+			
 		}
 		
 		System.out.println();
-		System.out.print(stack.pop());
+		System.out.println(stack.pop());
+		
+		System.out.println(stack.size());
 		
 	}
 
