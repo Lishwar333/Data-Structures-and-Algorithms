@@ -5,7 +5,7 @@ public class Selection_Sort_with_custom_cmpmethod implements Comparable<Integer>
 	public void sort(int[] arr) {
 		
 		int[] arr2 = arr;
-		int i;
+		int i; 
 		
 		int N = arr2.length;
 		for(i=0; i<N; i++) {

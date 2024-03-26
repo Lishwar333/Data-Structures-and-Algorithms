@@ -8,7 +8,7 @@ public class Selection_Sort implements Comparable {
 		int i;
 		
 		int N = arr2.length;
-		for(i=0; i<N; i++) {
+		for(i=0; i<N; i++) { 
 			int min = i;
 			
 			for(int j=i+1; j<N; j++) {

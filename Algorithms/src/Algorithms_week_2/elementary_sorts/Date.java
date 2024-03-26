@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 // This is the Date class implementation. We can use the Comparable interface that has compareTo()
 // method to compare different dates!
-public class Date implements Comparable<Date> {
+public class Date implements Comparable<Date> { 
     private static final int[] DAYS = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
     private final int month;   // month (between 1 and 12)
