@@ -78,52 +78,45 @@ public class ElementarySortsProblems {
     Constant extra space.
      */
 
-    enum Pebble {
-        Red,
-        White,
-        Blue
-    }
+    class SortColors {
 
-    class Buckets {
-        private Pebble[] pebbles;
+    	  void sortColors(int[] nums) {
 
-        private Pebble color(int i) {
-            return pebbles[i];
-        }
+    	    int start = 0;
+    	    int mid = 0;
+    	    int end = nums.length - 1;
 
-        private int compare(Pebble p) {
-            Pebble white = Pebble.White;
-            return p.ordinal() - white.ordinal();
-        }
+    	    while (mid <= end) {
 
-        private void swap(int i, int j) {
-            Pebble tmp = pebbles[i];
-            pebbles[i] = pebbles[j];
-            pebbles[j] = tmp;
-        }
+    	      switch (nums[mid]) {
+    	        case 0:
+    	          // Swap with start index
+    	          swap(nums, start, mid);
+    	          mid++;
+    	          start++;
+    	          break;
 
-        public void sort() {
-            assert pebbles.length > 0;
-            int r = 0;
-            int runner = 0;
-            int b = pebbles.length - 1;
+    	        case 1:
+    	          mid++;
+    	          break;
 
-            while (runner <= b) {
-                Pebble color = color(runner);
-                int cmp = compare(color);
-                if (cmp < 0) {
-                    swap(runner++, r++);
-                }
-                else if (cmp > 0) {
-                    swap(runner, b--);
-                }
-                else {
-                    runner++;
-                }
+    	        case 2:
+    	          // Swap with end index
+    	          swap(nums, mid, end);
+    	          end--;
+    	          break;
+    	      }
+    	    }
 
-            }
-        }
+    	  }
+
+    	  private void swap(int[] arr, int pos1, int pos2) {
+    	    int temp = arr[pos1];
+    	    arr[pos1] = arr[pos2];
+    	    arr[pos2] = temp;
+    	  }
+
+    	}
 
 
-    }
 }
